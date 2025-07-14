@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Malla Curricular Interactiva</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    td, th {
+      border: 1px solid #ddd;
+      padding: 15px;
+      text-align: center;
+      cursor: pointer;
+    }
+    td:hover {
+      background-color: #dff9fb;
+    }
+    .info {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Malla Curricular Interactiva</h1>
+  <table>
+    <tr>
+      <th>Semestre 1</th>
+      <th>Semestre 2</th>
+    </tr>
+    <tr>
+      <td onclick="mostrarInfo('mate')">Matemáticas</td>
+      <td onclick="mostrarInfo('hist')">Historia</td>
+    </tr>
+    <tr>
+      <td onclick="mostrarInfo('bio')">Biología</td>
+      <td onclick="mostrarInfo('leng')">Lenguaje</td>
+    </tr>
+  </table>
+
+  <!-- Secciones de info ocultas -->
+  <div id="mate" class="info">Matemáticas: Álgebra, funciones, ecuaciones y geometría.</div>
+  <div id="hist" class="info">Historia: Civilizaciones antiguas, Edad Media y Edad Moderna.</div>
+  <div id="bio" class="info">Biología: Células, genética y ecología básica.</div>
+  <div id="leng" class="info">Lenguaje: Comprensión lectora, redacción y literatura.</div>
+
+  <script>
+    function mostrarInfo(id) {
+      // Oculta todos
+      const infos = document.querySelectorAll('.info');
+      infos.forEach(div => div.style.display = 'none');
+
+      // Muestra el seleccionado
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
